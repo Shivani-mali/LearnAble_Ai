@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #FFFFFF;
+  --content-color: #F5F7FA;
+  --sidebar-color: #E5E7EB; /* Subtle gray for borders/sidebars */
+  --action-color: #2196F3;
+  --action-dark: #1976D2;
+  --action-light: #64B5F6;
+  --success-color: #4CAF50;
+  --error-color: #ef4444; 
+  --text-color: #1F2937;
+  --text-light: #6B7280;
+  --border-color: #D1D5DB;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--action-dark);
+}
+
+button {
+  border-radius: 50px;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(90deg, var(--action-light) 0%, var(--action-color) 100%);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(1, 179, 239, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(1, 179, 239, 0.4);
+  background: linear-gradient(90deg, var(--action-color) 0%, var(--action-dark) 100%);
+}
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(1, 179, 239, 0.2);
+}
+button:disabled {
+  background: var(--border-color);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary Button Style */
+button.secondary-btn {
+  background: white;
+  color: var(--action-dark);
+  border: 2px solid var(--border-color);
+  box-shadow: none;
+}
+button.secondary-btn:hover {
+  border-color: var(--action-color);
+  color: var(--action-color);
+  background: white;
+}
+
+input, select {
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: white;
+  color: var(--text-color);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--action-color);
+  box-shadow: 0 0 0 3px rgba(1, 179, 239, 0.2);
+}
+
+.card {
+  background-color: var(--content-color);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(12, 12, 13, 0.08);
+  border: 1px solid rgba(175, 175, 175, 0.2);
+}
+
+/* Success styling */
+.success-text {
+  color: var(--success-color);
+  font-weight: bold;
+}
+.error-text {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
