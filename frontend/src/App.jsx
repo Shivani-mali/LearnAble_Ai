@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
+import Loader from './pages/Loader';
 import Preferences from './pages/Preferences';
 import StudentHome from './pages/StudentHome';
 import Learning from './pages/Learning';
@@ -13,8 +15,9 @@ function App() {
     <Router>
       <div className="app-container">
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/loader" element={<Loader />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/student-home" element={<StudentHome />} />
           <Route path="/learning" element={<Learning />} />

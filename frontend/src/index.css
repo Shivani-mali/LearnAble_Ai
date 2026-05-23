@@ -1,15 +1,15 @@
 :root {
-  --bg-color: #FFFFFF;
-  --content-color: #F5F7FA;
-  --sidebar-color: #E5E7EB; /* Subtle gray for borders/sidebars */
-  --action-color: #2196F3;
-  --action-dark: #1976D2;
-  --action-light: #64B5F6;
-  --success-color: #4CAF50;
-  --error-color: #ef4444; 
-  --text-color: #1F2937;
-  --text-light: #6B7280;
-  --border-color: #D1D5DB;
+  --bg-color: #FFFFFF; 
+  --content-color: #FFFFFF;
+  --sidebar-color: #F8FAFC;
+  --action-color: #3B82F6; /* Soft blue */
+  --action-dark: #2563EB;
+  --action-light: #EFF6FF; /* Light blue background for active states */
+  --success-color: #10B981;
+  --error-color: #EF4444; 
+  --text-color: #0F172A; /* Slate 900 */
+  --text-light: #64748B; /* Slate 500 */
+  --border-color: #E2E8F0; /* Slate 200 */
 
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -36,9 +36,15 @@ body {
 
 #root {
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+.app-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
   flex-direction: column;
 }
 
@@ -53,11 +59,11 @@ button {
   font-size: 1.1em;
   font-weight: 600;
   font-family: inherit;
-  background: linear-gradient(90deg, var(--action-light) 0%, var(--action-color) 100%);
+  background-color: var(--action-color);
   color: white;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
-  box-shadow: 0 4px 10px rgba(1, 179, 239, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -65,12 +71,12 @@ button {
 }
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(1, 179, 239, 0.4);
-  background: linear-gradient(90deg, var(--action-color) 0%, var(--action-dark) 100%);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+  background-color: var(--action-dark);
 }
 button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(1, 179, 239, 0.2);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 button:disabled {
   background: var(--border-color);

@@ -2,13 +2,13 @@ const { getAiResponse } = require('../services/aiService');
 
 const askAi = async (req, res) => {
   try {
-    const { question, context } = req.body;
+    const { question, context, mode } = req.body;
     
     if (!question) {
       return res.status(400).json({ error: 'Question is required' });
     }
 
-    const response = await getAiResponse(question, context);
+    const response = await getAiResponse(question, context, mode);
     res.json({ success: true, data: response });
   } catch (error) {
     console.error('Error in askAi controller:', error);

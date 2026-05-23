@@ -21,7 +21,7 @@ const Login = () => {
       } else {
         await signUpWithEmail(email, password, role);
       }
-      navigate(role === 'student' ? '/preferences' : '/parent-dashboard');
+      navigate(role === 'student' ? '/loader' : '/parent-dashboard');
     } catch (err) {
       setError(err.message);
     } finally {
@@ -32,7 +32,7 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       await loginWithGoogle(role);
-      navigate(role === 'student' ? '/preferences' : '/parent-dashboard');
+      navigate(role === 'student' ? '/loader' : '/parent-dashboard');
     } catch (err) {
       setError(err.message);
     }
@@ -40,7 +40,7 @@ const Login = () => {
 
   const handleGuestMode = () => {
     enableGuestMode();
-    navigate('/preferences');
+    navigate('/loader');
   };
 
   return (
