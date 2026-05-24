@@ -1,15 +1,15 @@
 :root {
   --bg-color: #FFFFFF; 
   --content-color: #FFFFFF;
-  --sidebar-color: #F8FAFC;
-  --action-color: #3B82F6; /* Soft blue */
-  --action-dark: #2563EB;
-  --action-light: #EFF6FF; /* Light blue background for active states */
-  --success-color: #10B981;
-  --error-color: #EF4444; 
-  --text-color: #0F172A; /* Slate 900 */
-  --text-light: #64748B; /* Slate 500 */
-  --border-color: #E2E8F0; /* Slate 200 */
+  --sidebar-color: #FAFAFA;
+  --action-color: #000000;
+  --action-dark: #333333;
+  --action-light: #F5F5F5;
+  --success-color: #000000;
+  --error-color: #333333; 
+  --text-color: #000000;
+  --text-light: #666666;
+  --border-color: #E5E5E5;
 
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -7,23 +7,23 @@ const LandingPage = () => {
   return (
     <div className="animate-in" style={{ padding: '2rem', textAlign: 'center', width: '100%', maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh' }}>
       <div className="card" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
-        <h1 style={{ fontSize: '3.5rem', margin: 0, fontWeight: '800', background: 'linear-gradient(90deg, var(--action-light), var(--action-dark))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>CALP</h1>
+        <h1 style={{ fontSize: '3.5rem', margin: 0, fontWeight: '800', color: 'var(--text-color)' }}>CALP</h1>
         <h3 style={{ margin: 0, color: 'var(--action-dark)', fontWeight: '600' }}>Cognitive Adaptive Learning Platform</h3>
         <p style={{ fontSize: '1.2rem', color: 'var(--text-light)', fontStyle: 'italic', marginBottom: '1rem' }}>
           "Learn in the way your mind understands"
         </p>
-        
+
         <div style={{
           width: '140px',
           height: '140px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, var(--action-light), var(--action-color))',
+          background: 'var(--action-light)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: 'var(--text-color)',
           fontSize: '4.5rem',
-          boxShadow: '0 10px 30px rgba(1, 179, 239, 0.4)',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
           marginBottom: '1rem',
           animation: 'pulse 2s infinite'
         }}>
@@ -37,9 +37,9 @@ const LandingPage = () => {
       </div>
       <style>{`
         @keyframes pulse {
-          0% { transform: scale(1); box-shadow: 0 10px 30px rgba(1, 179, 239, 0.4); }
-          50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(1, 179, 239, 0.6); }
-          100% { transform: scale(1); box-shadow: 0 10px 30px rgba(1, 179, 239, 0.4); }
+          0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+          50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+          100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
         }
       `}</style>
     </div>

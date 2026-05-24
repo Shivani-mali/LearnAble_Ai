@@ -20,10 +20,10 @@ const Preferences = () => {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {[
-            '🧩 Step-by-Step Mode',
-            '⚡ Focus Mode',
-            '📖 Easy Read Mode',
-            '🧠 Structured Mode'
+            'Step-by-Step Mode',
+            'Focus Mode',
+            'Easy Read Mode',
+            'Structured Mode'
           ].map(p => (
             <button 
               key={p}

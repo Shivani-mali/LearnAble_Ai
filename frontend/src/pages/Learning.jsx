@@ -8,7 +8,7 @@ const Learning = () => {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
   
-  const mode = localStorage.getItem('learning_preference') || '🧩 Step-by-Step Mode';
+  const mode = localStorage.getItem('learning_preference') || 'Step-by-Step Mode';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -80,8 +80,8 @@ const Learning = () => {
             
             {messages.length === 0 ? (
               <div style={{ textAlign: 'center', color: 'var(--text-color)', marginTop: '10vh', animation: 'slideUpFade 0.5s ease-out' }}>
-                <div style={{ width: '80px', height: '80px', margin: '0 auto 1.5rem', background: 'var(--action-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>
-                  👋
+                <div style={{ width: '80px', height: '80px', margin: '0 auto 1.5rem', background: 'var(--action-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 'bold' }}>
+                  CALP
                 </div>
                 <h2 style={{ fontSize: '2rem', fontWeight: 'bold' }}>What would you like to learn today?</h2>
                 <p style={{ color: 'var(--text-light)', fontSize: '1.1rem', marginTop: '0.5rem' }}>I will adapt my teaching style to match your preferences.</p>
@@ -112,6 +112,27 @@ const Learning = () => {
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                         <div style={{ whiteSpace: 'pre-wrap' }}>{msg.content.explanation}</div>
                         
+                        {/* Dynamic Image from Unsplash */}
+                        {msg.content.imageUrl && (
+                          <img 
+                            src={msg.content.imageUrl} 
+                            alt="Educational Illustration" 
+                            style={{ width: '100%', borderRadius: '12px', marginTop: '0.5rem', objectFit: 'cover', maxHeight: '300px' }} 
+                          />
+                        )}
+
+                        {/* Dynamic Video from YouTube */}
+                        {msg.content.videoId && (
+                          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', marginTop: '0.5rem' }}>
+                            <iframe 
+                              src={`https://www.youtube.com/embed/${msg.content.videoId}`} 
+                              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }} 
+                              allowFullScreen 
+                              title="Educational Video"
+                            />
+                          </div>
+                        )}
+
                         {msg.content.example && (
                           <div style={{ padding: '1.2rem', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid var(--border-color)', color: 'var(--text-color)' }}>
                             <strong style={{ color: 'var(--action-dark)', display: 'block', marginBottom: '0.5rem' }}>Example:</strong>
@@ -127,7 +148,7 @@ const Learning = () => {
                         
                         {/* Feedback Buttons */}
                         <div style={{ display: 'flex', gap: '0.8rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                          {['😊 Easy', '😐 Okay', '😕 Confused'].map(fb => (
+                          {['Clear', 'Okay', 'Confused'].map(fb => (
                             <button key={fb} style={{ 
                               padding: '0.5rem 1rem', 
                               fontSize: '0.9rem', 

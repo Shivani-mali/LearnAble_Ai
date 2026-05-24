@@ -8,7 +8,7 @@ const StudentHome = () => {
   return (
     <DashboardLayout>
       <div className="animate-in" style={{ padding: '4rem 3rem', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Welcome back! 👋</h1>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-color)' }}>Welcome back.</h1>
         <p style={{ color: 'var(--text-light)', fontSize: '1.2rem', marginBottom: '3rem' }}>Ready to continue your learning journey?</p>
 
         <div className="card" style={{ 
@@ -23,7 +23,7 @@ const StudentHome = () => {
         }}>
           <div>
             <h2 style={{ margin: 0, fontSize: '1.8rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              🎯 Today's Learning Goal
+              Today's Learning Goal
             </h2>
             <p style={{ color: 'var(--text-light)', margin: '0.5rem 0 0 0', fontSize: '1.1rem', paddingLeft: '38px' }}>
               Master the basics of Addition
