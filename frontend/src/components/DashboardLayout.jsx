@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }) => {
   };
 
   const getIcon = (name) => {
-    switch(name) {
+    switch (name) {
       case 'Home': return <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>;
       case 'Learning Modes': return <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="2" y1="12" x2="22" y2="12"></line></svg>;
       case 'History': return <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>;
@@ -55,20 +55,14 @@ const DashboardLayout = ({ children }) => {
         justifyContent: 'space-between'
       }}>
         <div>
-          <div style={{ paddingLeft: '1rem', marginBottom: '3rem', display: 'flex', alignItems: 'center' }}>
-            {/* Add your logo image to the 'public' folder and name it 'logo.png' */}
-            <img 
-              src="/logo.png" 
-              alt="" 
-              style={{ height: '40px', objectFit: 'contain', display: 'none' }} 
-              onLoad={(e) => { e.target.style.display = 'block'; document.getElementById('fallback-logo-text').style.display = 'none'; }}
-            />
-            <h2 id="fallback-logo-text" style={{ color: 'var(--action-dark)', margin: 0, fontSize: '1.8rem', fontWeight: 'bold' }}>CALP</h2>
+          <div style={{ paddingLeft: '1rem', marginBottom: '3rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <img src="/calpLogo.png" alt="CALP Logo" style={{ height: '35px', objectFit: 'contain' }} />
+            <h2 style={{ color: 'var(--action-dark)', margin: 0, fontSize: '1.8rem', fontWeight: 'bold' }}>CALP</h2>
           </div>
-          
+
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {menuItems.map(item => (
-              <button 
+              <button
                 key={item.name}
                 onClick={() => !item.path.startsWith('#') && navigate(item.path)}
                 style={{
@@ -98,19 +92,19 @@ const DashboardLayout = ({ children }) => {
 
         {/* User Profile Section */}
         {user && (
-          <div style={{ 
-            marginTop: 'auto', 
-            padding: '1rem', 
-            borderRadius: '12px', 
+          <div style={{
+            marginTop: 'auto',
+            padding: '1rem',
+            borderRadius: '12px',
             backgroundColor: 'rgba(0,0,0,0.03)',
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
             border: '1px solid var(--border-color)'
           }}>
-            <img 
-              src={user.photoURL || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + user.email} 
-              alt="Profile" 
+            <img
+              src={user.photoURL || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + user.email}
+              alt="Profile"
               style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }}
             />
             <div style={{ flex: 1, overflow: 'hidden' }}>
@@ -121,12 +115,12 @@ const DashboardLayout = ({ children }) => {
                 {user.email}
               </div>
             </div>
-            <button 
+            <button
               onClick={handleLogout}
-              style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer', 
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
                 color: 'var(--text-light)',
                 padding: '5px',
                 boxShadow: 'none',
@@ -141,7 +135,7 @@ const DashboardLayout = ({ children }) => {
           </div>
         )}
       </div>
-      
+
       {/* Main Content Area */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         {children}

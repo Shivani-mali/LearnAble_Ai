@@ -48,32 +48,32 @@ const Login = () => {
       <div className="card animate-in" style={{ maxWidth: '400px', width: '100%' }}>
         <h1 style={{ marginBottom: '0.5rem' }}>LearnAble AI</h1>
         <p style={{ color: 'var(--text-light)', marginBottom: '2rem' }}>A safe and simple space to learn.</p>
-        
+
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
           {error && <div className="error-text" style={{ padding: '0.8rem', backgroundColor: 'var(--sidebar-color)', borderRadius: '8px', border: '1px solid var(--error-color)' }}>{error}</div>}
-          
-          <input 
-            type="email" 
-            placeholder="Email address" 
-            required 
+
+          <input
+            type="email"
+            placeholder="Email address"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input 
-            type="password" 
-            placeholder="Password" 
-            required 
+          <input
+            type="password"
+            placeholder="Password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          
+
           {!isLogin && (
             <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="student">Student</option>
               <option value="parent">Parent</option>
             </select>
           )}
-          
+
           <button type="submit" disabled={loading} style={{ width: '100%' }}>
             {loading ? 'Processing...' : (isLogin ? 'Login' : 'Sign Up')}
             <span style={{ marginLeft: 'auto', backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: '50%', width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>▶</span>
@@ -84,7 +84,7 @@ const Login = () => {
           <button onClick={handleGoogleLogin} className="secondary-btn" style={{ width: '100%' }}>
             Login with Google
           </button>
-          
+
           <button onClick={handleGuestMode} className="secondary-btn" style={{ width: '100%', borderStyle: 'dashed' }}>
             Continue as Guest
           </button>

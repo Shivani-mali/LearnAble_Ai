@@ -80,8 +80,8 @@ const Learning = () => {
             
             {messages.length === 0 ? (
               <div style={{ textAlign: 'center', color: 'var(--text-color)', marginTop: '10vh', animation: 'slideUpFade 0.5s ease-out' }}>
-                <div style={{ width: '80px', height: '80px', margin: '0 auto 1.5rem', background: 'var(--action-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 'bold' }}>
-                  CALP
+                <div style={{ width: '80px', height: '80px', margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <img src="/calpLogo.png" alt="CALP Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <h2 style={{ fontSize: '2rem', fontWeight: 'bold' }}>What would you like to learn today?</h2>
                 <p style={{ color: 'var(--text-light)', fontSize: '1.1rem', marginTop: '0.5rem' }}>I will adapt my teaching style to match your preferences.</p>
